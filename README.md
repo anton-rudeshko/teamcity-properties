@@ -2,6 +2,8 @@
 
 Access [TeamCity build parameters](http://confluence.jetbrains.com/display/TCD8/Configuring+Build+Parameters) from Node.js.
 
+**Important:** from TeamCity build you can only access `system.*` parameters.
+
 ## Installation
 
 Using npm:
