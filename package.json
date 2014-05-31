@@ -1,6 +1,6 @@
 {
   "name": "teamcity-properties",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Access TeamCity build parameters from Node.js",
   "author": "Anton Rudeshko <anton@rudeshko.com>",
   "repository": "https://github.com/anton-rudeshko/teamcity-properties",
