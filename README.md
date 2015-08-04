@@ -14,14 +14,23 @@ npm install --save teamcity-properties
 
 ## Usage
 
+```properties
+# test.properties
+myCompany.project.name = example
+```
+
 ```js
 var tcProps = require('teamcity-properties');
 
-// not fail-safe
+// may fail silently (return undefined)
 var agentName = tcProps['agent.name'];
 
 // throws if no such property
 var projectName = tcProps.get('myCompany.project.name');
+
+// get properties as namespaces (nested objects);
+var asObject = tcProps.namespaces();
+asObject.myCompany.project.name; // example
 ```
 
 ## References
