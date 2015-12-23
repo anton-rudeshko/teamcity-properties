@@ -19,11 +19,13 @@ function declareMethod(name, method) {
 /**
  * Access property with presence check.
  * @param {String} key
+ * @param {*} defaultVal
  * @returns {String|Number|Boolean}
  * @throws when requested key is not defined
  */
-declareMethod('get', function(key) {
-    if (key in teamcityProperties) return teamcityProperties[key];
+declareMethod('get', function(key, defaultVal) {
+    if (key in teamcityProperties) return teamcityProperпties[key];
+    if(defaultVal === undefined) return defaultVal;
     throw new Error('"' + key + '" is not defined in TeamCity build properties. Consider adding it as "system.' + key + '".');
 });
 
