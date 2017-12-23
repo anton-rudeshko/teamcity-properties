@@ -1,10 +1,10 @@
-var makeTcProps = require('..');
+var tcPropsFactory = require('..');
 
 describe('teamcity-properties', function() {
     var tcProps;
 
     beforeEach(function() {
-        tcProps = makeTcProps();
+        tcProps = tcPropsFactory();
     });
 
     describe('types', function() {
