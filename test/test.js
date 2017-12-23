@@ -1,6 +1,12 @@
-var tcProps = require('..');
+var makeTcProps = require('..');
 
 describe('teamcity-properties', function() {
+    var tcProps;
+
+    beforeEach(function() {
+        tcProps = makeTcProps();
+    });
+
     describe('types', function() {
         it('should parse numbers', function() {
             assert.isNumber(tcProps['number']);
@@ -26,13 +32,15 @@ describe('teamcity-properties', function() {
     });
 
     describe('namespace access', function() {
-        var namespaces = tcProps.namespaces();
-
         it('should return object', function() {
+            var namespaces = tcProps.namespaces();
+
             assert.isObject(namespaces);
         });
 
         it('should return nested properties', function() {
+            var namespaces = tcProps.namespaces();
+
             assert.strictEqual(namespaces['foo']['bar'], 'bar');
         });
     });
